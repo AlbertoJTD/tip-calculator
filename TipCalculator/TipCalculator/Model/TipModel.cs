@@ -53,22 +53,6 @@ namespace TipCalculator
 			}
 		}
 
-
-		public Command OperationsCommand { get; set; }
-
-        public TipModel()
-        {
-            OperationsCommand = new Command(Operations);
-		}
-
-		private void Operations()
-        {
-			TotalTip = Total * ((decimal)PercentageTip / 100);
-			TotalBill = Total + TotalTip;
-			TipPerPerson = TotalTip / NumberPeople;
-			TotalPerPerson = TotalBill / NumberPeople;
-		}
-
 		public event PropertyChangedEventHandler PropertyChanged;
 
 		protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)

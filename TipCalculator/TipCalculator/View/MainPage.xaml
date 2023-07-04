@@ -1,7 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:converters="clr-namespace:TipCalculator.Converters"
              x:Class="TipCalculator.MainPage">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <converters:DecimalToCurrency x:Key="applyCurrencyFormat" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
 
     <TableView Intent="Form">
         <TableSection Title="Data">
@@ -9,15 +15,15 @@
                        Label="Total $: "
                        Placeholder="$0.0"
                        Keyboard="Numeric"
-                       Text="{Binding Total}"/>
+                       Text="{Binding model.Total}"/>
             <EntryCell x:Name="inputPercentageTip"
                        Label="Tip (%): "
                        Keyboard="Numeric"
-                       Text="{Binding PercentageTip}"/>
+                       Text="{Binding model.PercentageTip}"/>
             <EntryCell x:Name="inputNumberPeople"
                        Label="Number of people: "
                        Keyboard="Numeric"
-                       Text="{Binding NumberPeople}"/>
+                       Text="{Binding model.NumberPeople}"/>
         </TableSection>
 
         <TableSection>
@@ -35,16 +41,16 @@
         <TableSection Title="Result">
             <TextCell x:Name="labelTip"
                       Text="Tip"
-                      Detail="{Binding TotalTip, StringFormat='${0:N2}'}" />
+                      Detail="{Binding model.TotalTip, Converter={StaticResource applyCurrencyFormat}}" />
             <TextCell x:Name="labelTipPerPerson"
                       Text="Tip per person"
-                      Detail="{Binding TipPerPerson, StringFormat='${0:N2}'}" />
+                      Detail="{Binding model.TipPerPerson, Converter={StaticResource applyCurrencyFormat}}" />
             <TextCell x:Name="labelTotalPerPerson"
                       Text="Total per person"
-                      Detail="{Binding TotalPerPerson, StringFormat='${0:N2}'}"/>
+                      Detail="{Binding model.TotalPerPerson, Converter={StaticResource applyCurrencyFormat}}"/>
             <TextCell x:Name="labelTotal"
                       Text="Total: "
-                      Detail="{Binding TotalBill, StringFormat='${0:N2}'}" />
+                      Detail="{Binding model.TotalBill, Converter={StaticResource applyCurrencyFormat}}" />
         </TableSection>
     </TableView>
 
