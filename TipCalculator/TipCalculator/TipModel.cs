@@ -12,6 +12,6 @@ namespace TipCalculator
         public decimal TotalTip { get; set; }
         public decimal TotalBill { get; set; }
         public decimal TipPerPerson { get; set; }
-        public decimal TotalTipPerPerson { get;set; }
+        public decimal TotalPerPerson { get;set; }
     }
 }

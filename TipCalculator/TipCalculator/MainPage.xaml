@@ -41,7 +41,7 @@
                       Detail="{Binding TipPerPerson}" />
             <TextCell x:Name="labelTotalPerPerson"
                       Text="Total per person"
-                      Detail="{Binding TotalTipPerPerson}"/>
+                      Detail="{Binding TotalPerPerson}"/>
             <TextCell x:Name="labelTotal"
                       Text="Total: "
                       Detail="{Binding TotalBill}" />
