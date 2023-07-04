@@ -8,13 +8,16 @@
             <EntryCell x:Name="inputTotal"
                        Label="Total: "
                        Placeholder="$0.0"
-                       Keyboard="Numeric"/>
+                       Keyboard="Numeric"
+                       Text="{Binding Total}"/>
             <EntryCell x:Name="inputPercentageTip"
                        Label="Tip (%): "
-                       Keyboard="Numeric"/>
+                       Keyboard="Numeric"
+                       Text="{Binding PercentageTip}"/>
             <EntryCell x:Name="inputNumberPeople"
                        Label="Number of people: "
-                       Keyboard="Numeric"/>
+                       Keyboard="Numeric"
+                       Text="{Binding NumberPeople}"/>
         </TableSection>
 
         <TableSection>
@@ -32,16 +35,16 @@
         <TableSection Title="Result">
             <TextCell x:Name="labelTip"
                       Text="Tip"
-                      Detail="$0.0"/>
+                      Detail="{Binding TotalTip}" />
             <TextCell x:Name="labelTipPerPerson"
                       Text="Tip per person"
-                      Detail="$0.0" />
+                      Detail="{Binding TipPerPerson}" />
             <TextCell x:Name="labelTotalPerPerson"
                       Text="Total per person"
-                      Detail="$0.0" />
+                      Detail="{Binding TotalTipPerPerson}"/>
             <TextCell x:Name="labelTotal"
                       Text="Total: "
-                      Detail="$0.0" />
+                      Detail="{Binding TotalBill}" />
         </TableSection>
     </TableView>
 
