@@ -6,7 +6,7 @@
     <TableView Intent="Form">
         <TableSection Title="Data">
             <EntryCell x:Name="inputTotal"
-                       Label="Total: "
+                       Label="Total $: "
                        Placeholder="$0.0"
                        Keyboard="Numeric"
                        Text="{Binding Total}"/>
@@ -26,7 +26,7 @@
                     <StackLayout>
                         <Button x:Name="CalculateButton"
                                 Text="Calculate"
-                                Clicked="CalculateButton_Clicked"/>
+                                Command="{Binding OperationsCommand}"/>
                     </StackLayout>
                 </ViewCell.View>
             </ViewCell>
@@ -35,16 +35,16 @@
         <TableSection Title="Result">
             <TextCell x:Name="labelTip"
                       Text="Tip"
-                      Detail="{Binding TotalTip}" />
+                      Detail="{Binding TotalTip, StringFormat='${0:N2}'}" />
             <TextCell x:Name="labelTipPerPerson"
                       Text="Tip per person"
-                      Detail="{Binding TipPerPerson}" />
+                      Detail="{Binding TipPerPerson, StringFormat='${0:N2}'}" />
             <TextCell x:Name="labelTotalPerPerson"
                       Text="Total per person"
-                      Detail="{Binding TotalPerPerson}"/>
+                      Detail="{Binding TotalPerPerson, StringFormat='${0:N2}'}"/>
             <TextCell x:Name="labelTotal"
                       Text="Total: "
-                      Detail="{Binding TotalBill}" />
+                      Detail="{Binding TotalBill, StringFormat='${0:N2}'}" />
         </TableSection>
     </TableView>
 
